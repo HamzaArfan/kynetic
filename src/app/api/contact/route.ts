@@ -23,6 +23,7 @@ export async function POST(request: Request) {
     });
 
     let name: string, email: string, message: string;
+    let additionalData: any = {};
 
     // Check content type and parse accordingly
     const contentType = request.headers.get('content-type');
@@ -30,22 +31,31 @@ export async function POST(request: Request) {
 
     if (contentType && contentType.includes('multipart/form-data')) {
       const formData = await request.formData();
-      name = formData.get('name') as string;
-      email = formData.get('email') as string;
-      message = formData.get('message') as string;
+      name = formData.get('name') as string || formData.get('navn') as string;
+      email = formData.get('email') as string || formData.get('epost') as string;
+      message = formData.get('message') as string || formData.get('ekstra') as string;
     } else if (contentType && contentType.includes('application/json')) {
       const jsonData = await request.json();
       console.log('Received JSON data:', jsonData);
-      name = jsonData.name;
-      email = jsonData.email;
-      message = jsonData.message;
+      // Support both English and Norwegian field names
+      name = jsonData.name || jsonData.navn;
+      email = jsonData.email || jsonData.epost;
+      message = jsonData.message || jsonData.ekstra;
+      
+      // Get additional Norwegian form data
+      additionalData = {
+        bedrift: jsonData.bedrift,
+        orgnr: jsonData.orgnr,
+        tjeneste: jsonData.tjeneste,
+        telefon: jsonData.telefon
+      };
     } else {
       // Try to parse as form data anyway
       try {
         const formData = await request.formData();
-        name = formData.get('name') as string;
-        email = formData.get('email') as string;
-        message = formData.get('message') as string;
+        name = formData.get('name') as string || formData.get('navn') as string;
+        email = formData.get('email') as string || formData.get('epost') as string;
+        message = formData.get('message') as string || formData.get('ekstra') as string;
       } catch (error) {
         console.error('Failed to parse request body:', error);
         return NextResponse.json(
@@ -55,12 +65,12 @@ export async function POST(request: Request) {
       }
     }
 
-    console.log('Parsed form data:', { name, email, message });
+    console.log('Parsed form data:', { name, email, message, additionalData });
 
-    if (!name || !email || !message) {
-      console.log('Missing required fields:', { name: !!name, email: !!email, message: !!message });
+    if (!name || !email) {
+      console.log('Missing required fields:', { name: !!name, email: !!email });
       return NextResponse.json(
-        { error: 'Name, email and message are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       );
     }
@@ -77,11 +87,17 @@ export async function POST(request: Request) {
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p><strong>Navn:</strong> ${name}</p>
             <p><strong>E-post:</strong> ${email}</p>
+            ${additionalData.bedrift ? `<p><strong>Bedrift:</strong> ${additionalData.bedrift}</p>` : ''}
+            ${additionalData.orgnr ? `<p><strong>Organisasjonsnummer:</strong> ${additionalData.orgnr}</p>` : ''}
+            ${additionalData.tjeneste ? `<p><strong>Tjeneste:</strong> ${additionalData.tjeneste}</p>` : ''}
+            ${additionalData.telefon ? `<p><strong>Telefon:</strong> ${additionalData.telefon}</p>` : ''}
           </div>
+          ${message ? `
           <div style="background-color: #fff; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
-            <h3 style="color: #333; margin-top: 0;">Melding:</h3>
+            <h3 style="color: #333; margin-top: 0;">Ekstra opplysninger:</h3>
             <p style="line-height: 1.6; color: #555;">${message.replace(/\n/g, '<br>')}</p>
           </div>
+          ` : ''}
           <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #dee2e6; color: #6c757d; font-size: 14px;">
             <p>Denne meldingen ble sendt fra kontaktskjemaet på kynetic.no</p>
           </div>
