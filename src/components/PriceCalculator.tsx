@@ -35,7 +35,14 @@ export default function PriceCalculator() {
     setStatus('loading');
 
     try {
-      await sendEmail('calculator', formData);
+      await sendEmail({
+        type: 'calculator',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        projectType: formData.projectType,
+        estimatedPrice: formData.estimatedPrice
+      });
       setStatus('success');
       setMessage('Takk for din henvendelse! Vi vil kontakte deg snart med en detaljert prisestimering.');
       setFormData({

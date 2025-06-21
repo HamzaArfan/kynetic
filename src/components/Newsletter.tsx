@@ -12,7 +12,11 @@ export default function Newsletter() {
     setStatus('loading');
 
     try {
-      await sendEmail('newsletter', { email });
+      await sendEmail({ 
+        type: 'newsletter',
+        name: '',
+        email 
+      });
       setStatus('success');
       setMessage('Takk for din registrering!');
       setEmail('');

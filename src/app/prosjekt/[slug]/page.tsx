@@ -7,6 +7,11 @@ import Link from "next/link";
 
 export default function ProjectPage() {
   const params = useParams();
+  
+  if (!params) {
+    return <div>Loading...</div>;
+  }
+  
   const slug = typeof params.slug === 'string' ? params.slug : params.slug[0];
   const project = projects.find((p) => p.slug === slug);
 

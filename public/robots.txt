@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/*
+Disallow: /api/*
+
+# Host
+Host: https://kynetic.no
+
+# Sitemaps
+Sitemap: https://kynetic.no/sitemap.xml
+Sitemap: https://kynetic.no/server-sitemap.xml

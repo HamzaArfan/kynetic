@@ -2,6 +2,8 @@ export type Project = {
   slug: string;
   title: string;
   subtitle: string;
+  description: string;
+  longDescription: string;
   tags: string[];
   tech: { name: string; icon: string; iconColor?: string; iconType?: 'svg'|'text' }[];
   client: string;

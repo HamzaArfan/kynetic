@@ -5,7 +5,7 @@ import Header from "./Header";
 
 export default function HeaderWrapper() {
   const pathname = usePathname();
-  const isAdmin = pathname.startsWith("/admin");
+  const isAdmin = pathname?.startsWith("/admin") || false;
 
   if (isAdmin) {
     return null;
