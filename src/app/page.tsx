@@ -181,8 +181,8 @@ export default function Home() {
           {/* Project Card */}
           <div className="absolute left-8 bottom-8 bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-3 min-w-[320px] max-w-[90vw]">
             <div className="flex gap-2 mb-1">
-              <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Grafisk profil</span>
-              <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Emballasjedesign</span>
+              <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Nettside</span>
+              <span className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Systemutvikling</span>
             </div>
             <div className="flex items-center gap-2">
               <h2 className="text-lg font-semibold text-gray-900">BiliX</h2>
@@ -220,12 +220,12 @@ export default function Home() {
           {[
             { title: "Nettside", desc: "Nettsider som kombinerer design, funksjonalitet, brukervennlighet og helt rå ytelse.", href: "/tjenester/nettside" },
             { title: "Konsept og idéutvikling", desc: "En god ide og et godt kreativt konsept skaper helhet og kontroll.", href: "/tjenester/konsept" },
-            { title: "3D og animasjon", desc: "Gjør idéene dine levende med 3D og animasjon, enten det er et konsept eller markedsføring.", href: "/tjenester/3d" },
-            { title: "UX/UI design", desc: "Sikre at kundene dine finner frem i løsningen deres samtidig som den er visuelt fin å se på.", href: "/tjenester/design" },
-            { title: "Systemutvikling", desc: "Det er mye å tenke på med systemutvikling, vi har erfaring med hva som funker og ikke...", href: "/tjenester/system" },
-            { title: "Apputvikling", desc: "En app skal føles native og intuitiv på alle flater den brukes på, enten det er iOS eller...", href: "/tjenester/app" },
+            { title: "3D og animasjon", desc: "Gjør idéene dine levende med 3D og animasjon, enten det er et konsept eller markedsføring.", href: "/tjenester/3d-animasjon" },
+            { title: "UX/UI design", desc: "Sikre at kundene dine finner frem i løsningen deres samtidig som den er visuelt fin å se på.", href: "/tjenester/ux-ui" },
+            { title: "Systemutvikling", desc: "Det er mye å tenke på med systemutvikling, vi har erfaring med hva som funker og ikke...", href: "/tjenester/systemutvikling" },
+            { title: "Apputvikling", desc: "En app skal føles native og intuitiv på alle flater den brukes på, enten det er iOS eller...", href: "/tjenester/apputvikling" },
             { title: "Kunstig intelligens", desc: "Riktig bruk av KI kan være med på å redusere de repetitive oppgavene og...", href: "/tjenester/ki" },
-            { title: "Markedsstategi", desc: "Du skal ikke undervurdere en god strategisk plan som kan hjelpe deg med å nå ut til fler...", href: "/tjenester/strategi" },
+            { title: "Markedsstategi", desc: "Du skal ikke undervurdere en god strategisk plan som kan hjelpe deg med å nå ut til fler...", href: "/tjenester/markedsstrategi" },
           ].map((item, i) => (
             <Link 
               key={i} 

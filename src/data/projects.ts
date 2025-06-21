@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     slug: 'bilklar',
     title: 'Bilklar',
-    subtitle: 'App for bilforhandlere med fokus på brukervennlighet og effektivitet.',
+    subtitle: 'Bilklar er en applikasjon som hjelper privatpersoner å selge bilen sin enkelt og trygt – med samme service og trygghet som hos en bilforhandler. Vi har utviklet en brukervennlig plattform som gjør bilsalget effektivt, oversiktlig og tilgjengelig på mobil og nettbrett. Med Bilklar får brukerne profesjonell hjelp hele veien fra annonsering til salg.',
     description: '',
     longDescription: '',
     image: '/bilklaronkelig-scaled.jpg',
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     slug: 'azgartner',
     title: 'Az Gartner',
-    subtitle: 'Visuell identitet og emballasjedesign for Az Gartner.',
+    subtitle: 'På Frosta finner du en erfaren aktør innen hagedesign, byggesøknader, prosjektering og miljøkartlegging. Vi har utviklet en moderne nettside som gir enkel tilgang til informasjon om deres brede tjenestespekter, fra hus og hytter til reguleringsplaner. Nettsiden er responsiv og brukervennlig, slik at både privatpersoner og bedrifter enkelt kan komme i kontakt og finne det de trenger. Dette digitale verktøyet styrker bedriftens profil og gjør det lettere å nå ut til nye kunder.',
     description: '',
     longDescription: '',
     image: '/azgartner-scaled.jpg',
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     slug: 'bilix',
     title: 'BiliX',
-    subtitle: 'Emballasjedesignprosjekt med fokus på moderne visuell identitet og 3D-presentasjon.',
+    subtitle: 'Bilix er en pålitelig bruktbilforhandler med et stort utvalg biler og fokus på kundetilfredshet. Vi har laget en moderne og brukervennlig nettside som gjør det enkelt for kundene å se biler, sende inn ytteforespørsler og ta kontakt. Nettsiden fungerer sømløst på både mobil og PC, noe som sikrer en god brukeropplevelse uansett hvor du er. Med denne digitale løsningen kan Bilix nå flere kunder og styrke sitt omdømme i markedet.',
     description: '',
     longDescription: '',
     image: '/bilix1.jpg',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     client: 'BiliX',
     year: 2024,
     link: 'https://bilix.no',
-    tags: ['Grafisk profil', 'Emballasjedesign'],
+    tags: ['Nettside', 'Systemutvikling'],
     tech: [
       { name: 'React Native', icon: 'React.png', iconType: 'svg', iconColor: '#272d2d' },
       { name: 'TypeScript', icon: 'ts.png', iconType: 'svg', iconColor: '#272d2d' },
