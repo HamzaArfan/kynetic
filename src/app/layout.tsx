@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     template: '%s | Kynetic AS',
   },
   description: 'Kynetic AS er et kreativt byrå som spesialiserer seg på nettsider, konseptutvikling, 3D og animasjon, UX/UI design, systemutvikling, apputvikling, kunstig intelligens og markedsstrategi.',
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   keywords: ['nettside', 'konseptutvikling', '3D', 'animasjon', 'UX/UI design', 'systemutvikling', 'apputvikling', 'kunstig intelligens', 'markedsstrategi', 'digital byrå', 'Norge'],
   authors: [{ name: 'Kynetic AS' }],
   creator: 'Kynetic AS',
